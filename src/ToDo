@@ -1,0 +1,16 @@
+Need:
+	[] Login to wall garden
+		
+	[] Active access button to router
+		- Make sure we get confirmation first
+	[] Log into router (Gemtech)
+	
+Slow speed (and Slow speed esclation)
+	[] Log into router and get metrics (Just do it for gemtech cat 6 for the start)
+	[] Get installers information
+		[] Pick the most recent job to get the metrics 
+	[] Compare the current metrics to the installers notes (How low do they have to go before being reported)
+	[] See if there's a 5 point difference in the SINR's (If applicable) (what about other metrics)
+	[]? Record how many devices are on the DHCP list, recommend action if too many{Output DHCP list}
+	[] Record Device and connection time {Output}
+	
