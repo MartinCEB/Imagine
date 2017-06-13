@@ -31,7 +31,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 	private JTextField textField;
 	JButton btnGenerate;
 	NoConnection_GEM NoConGEM;
-	
+	JFrame export_Ticket, export_Escalation;
 	/**
 	 * Launch the application.
 	 */
@@ -53,6 +53,12 @@ public class TicketBuilder extends JFrame implements ActionListener {
 	 */
 	public TicketBuilder() {
 		
+		//Set up Jframes for showing exports
+		export_Escalation = new JFrame();
+		export_Escalation.setSize(500, 500);
+		export_Escalation.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		export_Escalation.setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		NoConGEM = new NoConnection_GEM();
 		
 		setBounds(100, 100, 922, 900);
@@ -164,6 +170,14 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		gbc_btnGenerate.gridy = 3;
 		JP_Options.add(btnGenerate, gbc_btnGenerate);
 		
+		JButton btnExportEsc = new JButton("Export ESC");
+		GridBagConstraints gbc_btnExportEsc = new GridBagConstraints();
+		gbc_btnExportEsc.insets = new Insets(0, 0, 5, 5);
+		gbc_btnExportEsc.gridx = 8;
+		gbc_btnExportEsc.gridy = 3;
+		JP_Options.add(btnExportEsc, gbc_btnExportEsc);
+		btnExportEsc.addActionListener(this);
+		
 		JPanel Builder = new JPanel();
 		GridBagConstraints gbc_Builder = new GridBagConstraints();
 		gbc_Builder.gridheight = 12;
@@ -191,6 +205,10 @@ public class TicketBuilder extends JFrame implements ActionListener {
 			{
 				System.out.println("Clicked" + source.getText());
 				System.out.println(NoConGEM.exportUnoTicket());
+			}
+			if (source.getText()=="Export ESC")
+			{
+				System.out.println("dfasfsadasdsssssss");
 			}
 	}
 	private JPanel getCurrentBuilder()

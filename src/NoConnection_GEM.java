@@ -72,12 +72,11 @@ public class NoConnection_GEM extends JPanel {
 	private JCheckBox chckbxYes_ConnectionMoved;
 	private JCheckBox chckbxNo_ConnectionMoved;
 	public NoConnection_GEM() {
-		
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{769, 0};
+		gridBagLayout.rowHeights = new int[]{819, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		NoConnection_Gem = new JPanel();
@@ -471,14 +470,14 @@ public class NoConnection_GEM extends JPanel {
 		gbc_lblChangeWifiChannel.gridy = 12;
 		NoConnection_Gem.add(lblChangeWifiChannel, gbc_lblChangeWifiChannel);
 		
-		JLabel label_WanCable = new JLabel("Is WAN cable in the right slot?");
-		GridBagConstraints gbc_label_WanCable = new GridBagConstraints();
-		gbc_label_WanCable.fill = GridBagConstraints.BOTH;
-		gbc_label_WanCable.gridwidth = 5;
-		gbc_label_WanCable.insets = new Insets(0, 0, 5, 5);
-		gbc_label_WanCable.gridx = 2;
-		gbc_label_WanCable.gridy = 13;
-		NoConnection_Gem.add(label_WanCable, gbc_label_WanCable);
+		JLabel label_WanCable_1 = new JLabel("Is WAN cable in the right slot?");
+		GridBagConstraints gbc_label_WanCable_1 = new GridBagConstraints();
+		gbc_label_WanCable_1.fill = GridBagConstraints.BOTH;
+		gbc_label_WanCable_1.gridwidth = 5;
+		gbc_label_WanCable_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_WanCable_1.gridx = 2;
+		gbc_label_WanCable_1.gridy = 13;
+		NoConnection_Gem.add(label_WanCable_1, gbc_label_WanCable_1);
 		
 		checkBox_WAN_YES = new JCheckBox("Yes");
 		GridBagConstraints gbc_checkBox_WAN_YES = new GridBagConstraints();
@@ -496,14 +495,14 @@ public class NoConnection_GEM extends JPanel {
 		gbc_lblEsclationDetails.gridy = 13;
 		NoConnection_Gem.add(lblEsclationDetails, gbc_lblEsclationDetails);
 		
-		JLabel label_PowerCycle = new JLabel("Power Cycle");
-		GridBagConstraints gbc_label_PowerCycle = new GridBagConstraints();
-		gbc_label_PowerCycle.fill = GridBagConstraints.BOTH;
-		gbc_label_PowerCycle.anchor = GridBagConstraints.WEST;
-		gbc_label_PowerCycle.insets = new Insets(0, 0, 5, 5);
-		gbc_label_PowerCycle.gridx = 2;
-		gbc_label_PowerCycle.gridy = 14;
-		NoConnection_Gem.add(label_PowerCycle, gbc_label_PowerCycle);
+		JLabel label_PowerCycle_1 = new JLabel("Power Cycle");
+		GridBagConstraints gbc_label_PowerCycle_1 = new GridBagConstraints();
+		gbc_label_PowerCycle_1.fill = GridBagConstraints.BOTH;
+		gbc_label_PowerCycle_1.anchor = GridBagConstraints.WEST;
+		gbc_label_PowerCycle_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_PowerCycle_1.gridx = 2;
+		gbc_label_PowerCycle_1.gridy = 14;
+		NoConnection_Gem.add(label_PowerCycle_1, gbc_label_PowerCycle_1);
 		
 		checkBox_PC_Done = new JCheckBox("Done");
 		GridBagConstraints gbc_checkBox_PC_Done = new GridBagConstraints();
@@ -530,13 +529,13 @@ public class NoConnection_GEM extends JPanel {
 		NoConnection_Gem.add(textFieldLatAndLong, gbc_textFieldLatAndLong);
 		textFieldLatAndLong.setColumns(10);
 		
-		JLabel label_PowerCycle_l = new JLabel("User Direct connect");
-		GridBagConstraints gbc_label_PowerCycle_l = new GridBagConstraints();
-		gbc_label_PowerCycle_l.anchor = GridBagConstraints.WEST;
-		gbc_label_PowerCycle_l.insets = new Insets(0, 0, 5, 5);
-		gbc_label_PowerCycle_l.gridx = 2;
-		gbc_label_PowerCycle_l.gridy = 15;
-		NoConnection_Gem.add(label_PowerCycle_l, gbc_label_PowerCycle_l);
+		JLabel label_PowerCycle_l_1 = new JLabel("User Direct connect");
+		GridBagConstraints gbc_label_PowerCycle_l_1 = new GridBagConstraints();
+		gbc_label_PowerCycle_l_1.anchor = GridBagConstraints.WEST;
+		gbc_label_PowerCycle_l_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_PowerCycle_l_1.gridx = 2;
+		gbc_label_PowerCycle_l_1.gridy = 15;
+		NoConnection_Gem.add(label_PowerCycle_l_1, gbc_label_PowerCycle_l_1);
 		
 		checkBox_DirectCon_Done = new JCheckBox("Done");
 		GridBagConstraints gbc_checkBox_DirectCon_Done = new GridBagConstraints();
@@ -613,13 +612,13 @@ public class NoConnection_GEM extends JPanel {
 		gbc_checkBox_Ping_Radio_No.gridy = 17;
 		NoConnection_Gem.add(checkBox_Ping_Radio_No, gbc_checkBox_Ping_Radio_No);
 		
-		JLabel label_PinEight = new JLabel("Can Ping 8.8.8.8");
-		GridBagConstraints gbc_label_PinEight = new GridBagConstraints();
-		gbc_label_PinEight.anchor = GridBagConstraints.WEST;
-		gbc_label_PinEight.insets = new Insets(0, 0, 5, 5);
-		gbc_label_PinEight.gridx = 2;
-		gbc_label_PinEight.gridy = 18;
-		NoConnection_Gem.add(label_PinEight, gbc_label_PinEight);
+		JLabel label_PinEight_1 = new JLabel("Can Ping 8.8.8.8");
+		GridBagConstraints gbc_label_PinEight_1 = new GridBagConstraints();
+		gbc_label_PinEight_1.anchor = GridBagConstraints.WEST;
+		gbc_label_PinEight_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_PinEight_1.gridx = 2;
+		gbc_label_PinEight_1.gridy = 18;
+		NoConnection_Gem.add(label_PinEight_1, gbc_label_PinEight_1);
 		
 		checkBox_PingEight_Yes = new JCheckBox("Yes");
 		GridBagConstraints gbc_checkBox_PingEight_Yes = new GridBagConstraints();
@@ -646,28 +645,28 @@ public class NoConnection_GEM extends JPanel {
 		NoConnection_Gem.add(label_GoogleIE, gbc_label_GoogleIE);
 		
 		 checkBox_PingGoogleIE_Yes = new JCheckBox("Yes");
-		GridBagConstraints gbc_checkBox_PingGoogleIE_Yes = new GridBagConstraints();
-		gbc_checkBox_PingGoogleIE_Yes.anchor = GridBagConstraints.WEST;
-		gbc_checkBox_PingGoogleIE_Yes.insets = new Insets(0, 0, 5, 5);
-		gbc_checkBox_PingGoogleIE_Yes.gridx = 8;
-		gbc_checkBox_PingGoogleIE_Yes.gridy = 19;
-		NoConnection_Gem.add(checkBox_PingGoogleIE_Yes, gbc_checkBox_PingGoogleIE_Yes);
-		
-		checkBox_PingGoogle_No = new JCheckBox("No");
-		GridBagConstraints gbc_checkBox_PingGoogle_No = new GridBagConstraints();
-		gbc_checkBox_PingGoogle_No.anchor = GridBagConstraints.WEST;
-		gbc_checkBox_PingGoogle_No.insets = new Insets(0, 0, 5, 5);
-		gbc_checkBox_PingGoogle_No.gridx = 10;
-		gbc_checkBox_PingGoogle_No.gridy = 19;
-		NoConnection_Gem.add(checkBox_PingGoogle_No, gbc_checkBox_PingGoogle_No);
-		
-		
-		//Don't remove this, it messes with the layout, will remove later
-		JLabel label_19 = new JLabel("New label");
-		GridBagConstraints gbc_label_19 = new GridBagConstraints();
-		gbc_label_19.gridx = 25;
-		gbc_label_19.gridy = 28;
-		NoConnection_Gem.add(label_19, gbc_label_19);
+		 GridBagConstraints gbc_checkBox_PingGoogleIE_Yes = new GridBagConstraints();
+		 gbc_checkBox_PingGoogleIE_Yes.anchor = GridBagConstraints.WEST;
+		 gbc_checkBox_PingGoogleIE_Yes.insets = new Insets(0, 0, 5, 5);
+		 gbc_checkBox_PingGoogleIE_Yes.gridx = 8;
+		 gbc_checkBox_PingGoogleIE_Yes.gridy = 19;
+		 NoConnection_Gem.add(checkBox_PingGoogleIE_Yes, gbc_checkBox_PingGoogleIE_Yes);
+		 
+		 checkBox_PingGoogle_No = new JCheckBox("No");
+		 GridBagConstraints gbc_checkBox_PingGoogle_No = new GridBagConstraints();
+		 gbc_checkBox_PingGoogle_No.anchor = GridBagConstraints.WEST;
+		 gbc_checkBox_PingGoogle_No.insets = new Insets(0, 0, 5, 5);
+		 gbc_checkBox_PingGoogle_No.gridx = 10;
+		 gbc_checkBox_PingGoogle_No.gridy = 19;
+		 NoConnection_Gem.add(checkBox_PingGoogle_No, gbc_checkBox_PingGoogle_No);
+		 
+		 
+		 //Don't remove this, it messes with the layout, will remove later
+		 JLabel label_19 = new JLabel("New label");
+		 GridBagConstraints gbc_label_19 = new GridBagConstraints();
+		 gbc_label_19.gridx = 25;
+		 gbc_label_19.gridy = 28;
+		 NoConnection_Gem.add(label_19, gbc_label_19);
 		
 
 	}
@@ -787,7 +786,8 @@ public class NoConnection_GEM extends JPanel {
 				+ "\nTechnology:\n" + "LTE\n"
 				+ "Device Type\n"
 				+ "Gemtek WLTSS-114"
-				+ "\nEnodb & Cell ID\n";
+				+ "\nEnodb & Cell ID\n"
+				+ "";
 
 
 	}
