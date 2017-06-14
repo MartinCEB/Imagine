@@ -71,6 +71,10 @@ public class NoConnection_GEM extends JPanel {
 	private JLabel lblNewMoveConnection;
 	private JCheckBox chckbxYes_ConnectionMoved;
 	private JCheckBox chckbxNo_ConnectionMoved;
+	private JLabel lblCurrentEnode;
+	private JLabel lblCurrentCellId;
+	private JTextField textField_CurrentENode;
+	private JTextField textFieldCurrentCellID;
 	public NoConnection_GEM() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{769, 0};
@@ -88,7 +92,7 @@ public class NoConnection_GEM extends JPanel {
 		GridBagLayout gbl_NoConnection_Gem = new GridBagLayout();
 		gbl_NoConnection_Gem.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_NoConnection_Gem.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_NoConnection_Gem.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_NoConnection_Gem.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_NoConnection_Gem.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		NoConnection_Gem.setLayout(gbl_NoConnection_Gem);
 		
@@ -588,6 +592,24 @@ public class NoConnection_GEM extends JPanel {
 		gbc_checkBox_PingRouter_No.gridy = 16;
 		NoConnection_Gem.add(checkBox_PingRouter_No, gbc_checkBox_PingRouter_No);
 		
+		lblCurrentEnode = new JLabel("Current Enode");
+		GridBagConstraints gbc_lblCurrentEnode = new GridBagConstraints();
+		gbc_lblCurrentEnode.anchor = GridBagConstraints.WEST;
+		gbc_lblCurrentEnode.insets = new Insets(0, 0, 5, 5);
+		gbc_lblCurrentEnode.gridx = 12;
+		gbc_lblCurrentEnode.gridy = 16;
+		NoConnection_Gem.add(lblCurrentEnode, gbc_lblCurrentEnode);
+		
+		textField_CurrentENode = new JTextField();
+		GridBagConstraints gbc_textField_CurrentENode = new GridBagConstraints();
+		gbc_textField_CurrentENode.gridwidth = 2;
+		gbc_textField_CurrentENode.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_CurrentENode.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_CurrentENode.gridx = 16;
+		gbc_textField_CurrentENode.gridy = 16;
+		NoConnection_Gem.add(textField_CurrentENode, gbc_textField_CurrentENode);
+		textField_CurrentENode.setColumns(10);
+		
 		JLabel label_CanPingRadio = new JLabel("Can Ping radio");
 		GridBagConstraints gbc_label_CanPingRadio = new GridBagConstraints();
 		gbc_label_CanPingRadio.anchor = GridBagConstraints.WEST;
@@ -611,6 +633,24 @@ public class NoConnection_GEM extends JPanel {
 		gbc_checkBox_Ping_Radio_No.gridx = 10;
 		gbc_checkBox_Ping_Radio_No.gridy = 17;
 		NoConnection_Gem.add(checkBox_Ping_Radio_No, gbc_checkBox_Ping_Radio_No);
+		
+		lblCurrentCellId = new JLabel("Current Cell ID");
+		GridBagConstraints gbc_lblCurrentCellId = new GridBagConstraints();
+		gbc_lblCurrentCellId.anchor = GridBagConstraints.WEST;
+		gbc_lblCurrentCellId.insets = new Insets(0, 0, 5, 5);
+		gbc_lblCurrentCellId.gridx = 12;
+		gbc_lblCurrentCellId.gridy = 17;
+		NoConnection_Gem.add(lblCurrentCellId, gbc_lblCurrentCellId);
+		
+		textFieldCurrentCellID = new JTextField();
+		GridBagConstraints gbc_textFieldCurrentCellID = new GridBagConstraints();
+		gbc_textFieldCurrentCellID.gridwidth = 2;
+		gbc_textFieldCurrentCellID.insets = new Insets(0, 0, 5, 5);
+		gbc_textFieldCurrentCellID.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textFieldCurrentCellID.gridx = 16;
+		gbc_textFieldCurrentCellID.gridy = 17;
+		NoConnection_Gem.add(textFieldCurrentCellID, gbc_textFieldCurrentCellID);
+		textFieldCurrentCellID.setColumns(10);
 		
 		JLabel label_PinEight_1 = new JLabel("Can Ping 8.8.8.8");
 		GridBagConstraints gbc_label_PinEight_1 = new GridBagConstraints();
@@ -782,12 +822,69 @@ public class NoConnection_GEM extends JPanel {
 		if (checkBox_PingGoogleIE_Yes.isSelected()){pingGoogle	=	"User can NOT ping google.ie";		}
 		
 		return "Issue Description"
-				+ "Customer has a no connection issue that started: " + textField_DateIssueStarted.getText()
+				+ "<h1>Customer has a no connection issue that started: </h1> " + textField_DateIssueStarted.getText()
 				+ "\nTechnology:\n" + "LTE\n"
 				+ "Device Type\n"
 				+ "Gemtek WLTSS-114"
 				+ "\nEnodb & Cell ID\n"
-				+ "";
+				+ "Current Enodb & Cell ID \n"
+				+ "Longitude & Latitude\n"
+				+ textFieldLatAndLong.getText();
+
+		
+		
+
+/*
+		Longitude & Latitude
+
+		Provide a screenshot of the coverage map & elevation profile
+		Indoor unit Led Status
+
+		Provide accurate leds status of the indoor unit e.g Power Light Flashing Green - Wifi Light On - LTE light OFF
+		Resolution Steps
+
+		List clear steps taken to resolve the issue
+
+		LTE NO CONNECTION – CPE NOT ACCESSIBLE REMOTELY
+
+		1. Identify customer CPE type
+
+		2. Ask customer when the service went down
+
+		3. Check if there is any Outage
+
+		4. Ask customer if any cables was moved
+
+		5. Ask customer what the lights status on the indoor unit
+
+		6. Check in WG if CPE is returning an IP address
+
+		7. Check if CPE is accessible
+
+		8. CPE not accessible remotely – Reseat the radio cable and powercycle indoor unit
+
+		9. Wait for few minutes for the CPE to make a Network Entry
+
+		10. If Still Offline – Ask customer to ping the indoor router and Outdoor CPE
+
+		11. If reply from indoor and Outdoor – CPE is still offline escalate to 2nd Line
+
+		LTE NO CONNECTION – CPE ACCESSIBLE REMOTELY
+
+		1. Ask the customer to ping the indoor router
+
+		2. Ask the customer to ping the outdoor CPE
+
+		3. Ask the customer to ping 8.8.8.8
+
+		4. Check if you can access the indoor CPE remotely
+
+		5. Get customer to logon to the indoor router (if Greenpacket) and set the WAN IP and DNS
+
+		6. From the CPE ping the indoor router
+
+		7. If pings fail from outdoor to indoor it’s most likely a crimp issue and callout required – escalate to 2nd line for callout approval
+		*/
 
 
 	}

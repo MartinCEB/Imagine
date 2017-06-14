@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -13,12 +14,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
 import java.awt.CardLayout;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
@@ -32,6 +35,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 	JButton btnGenerate;
 	NoConnection_GEM NoConGEM;
 	JFrame export_Ticket, export_Escalation;
+	JTextPane jta;
 	/**
 	 * Launch the application.
 	 */
@@ -58,7 +62,13 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		export_Escalation.setSize(500, 500);
 		export_Escalation.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		export_Escalation.setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jta 	= new JTextPane();
+		JPanel testpan 	= new JPanel(new BorderLayout());
+		
+		jta.setContentType("text/html");
+		testpan.add(jta);
+
+		export_Escalation.add(testpan,BorderLayout.CENTER);
 		NoConGEM = new NoConnection_GEM();
 		
 		setBounds(100, 100, 922, 900);
@@ -204,11 +214,12 @@ public class TicketBuilder extends JFrame implements ActionListener {
 			if (source.getText() == "Generate")
 			{
 				System.out.println("Clicked" + source.getText());
-				System.out.println(NoConGEM.exportUnoTicket());
+				System.out.println(NoConGEM.generateUNO());
+				jta.setText(NoConGEM.generateUNO());
 			}
 			if (source.getText()=="Export ESC")
 			{
-				System.out.println("dfasfsadasdsssssss");
+				
 			}
 	}
 	private JPanel getCurrentBuilder()
