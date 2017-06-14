@@ -32,7 +32,6 @@ public class TemplateGenerator  implements ActionListener{
 		JPanel all 			= new JPanel(new GridLayout(2,2));
 		JLabel L_Uno 		= new JLabel("UNO Account Number");
 		JTextField TF_Uno 	= new JTextField(10);
-		
 		all.add(L_Uno);
 		all.add(TF_Uno);
 		

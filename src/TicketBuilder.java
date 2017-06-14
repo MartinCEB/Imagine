@@ -10,6 +10,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultComboBoxModel;
+
 import java.awt.CardLayout;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
@@ -39,6 +42,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 	/**
 	 * Launch the application.
 	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -55,6 +59,10 @@ public class TicketBuilder extends JFrame implements ActionListener {
 	/**
 	 * Create the frame.
 	 */
+	public void test()
+	{
+		System.out.println("no no no ");
+	}
 	public TicketBuilder() {
 		
 		//Set up Jframes for showing exports
@@ -126,7 +134,19 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		gbc_lblRouter.gridy = 1;
 		JP_Options.add(lblRouter, gbc_lblRouter);
 		
+		
 		JComboBox comboBox_Router = new JComboBox();
+		ArrayList<String> ls = new ArrayList<String>();
+		ls.add("GemTech6");
+		ls.add("Green Packet");
+		comboBox_Router.setModel(new DefaultComboBoxModel(ls.toArray()));
+		
+		comboBox_Router.addActionListener (new ActionListener () {
+		    public void actionPerformed(ActionEvent e) {
+		        test();
+		    }
+		});
+		
 		GridBagConstraints gbc_comboBox_Router = new GridBagConstraints();
 		gbc_comboBox_Router.fill = GridBagConstraints.BOTH;
 		gbc_comboBox_Router.gridwidth = 5;
@@ -205,7 +225,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		gbl_Builder.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_Builder.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		Builder.setLayout(gbl_Builder);
-	
+		System.out.println("Test:  " +  (String)comboBox_Router.getSelectedItem());
 	}
 
 	@Override
@@ -222,6 +242,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 				
 			}
 	}
+
 	private JPanel getCurrentBuilder()
 	{
 		return NoConGEM.getJpanel();

@@ -785,12 +785,12 @@ public class NoConnection_GEM extends JPanel {
 	{
 		String powerLight = "", canLogin = "",strOne = "" ,strTwo = "",strThree="",strFour="",strFive="";
 		String system = "", Lan1="",Lan2="",twoG="",fiveG="",phone="",WAN="",directConnect ="",pingRouter="",pingRadio="",pingEight="",pingGoogle="";
+		//If user can log into system.
 		
 		
 		if (checkBox_PowerOn.isSelected()){powerLight = "On";}
 		if (checkBox_Off_Power.isSelected()){powerLight = "Off";}
 		if (checkBox_AccessRouterYes.isSelected()){canLogin="I have access to the router.";}else{canLogin="I don't have access to the router.";}
-		//Lights:
 		if (checkBox_LTESTR1.isSelected()){strOne = "On";}else{strOne ="Off";}
 		if (checkBox_LTESTR2.isSelected()){strTwo = "On";}else{strTwo ="Off";}
 		if (checkBox_LTESTR3.isSelected()){strThree = "On";}else{strThree ="Off";}
@@ -806,7 +806,11 @@ public class NoConnection_GEM extends JPanel {
 		if (checkBox_2GOff.isSelected()){twoG="Off";}
 		if (checkBox_5G_On.isSelected()){fiveG="On";}
 		if (checkBox_5G_Off.isSelected()){fiveG="Off";}
+		
+		
 
+		//+ "Phone: " + ;
+		
 
 		if (checkBox_Phone_On.isSelected()){phone="On";}
 		if (checkBox_Phone_Off.isSelected()){phone="Off";}
@@ -821,29 +825,34 @@ public class NoConnection_GEM extends JPanel {
 		if (checkBox_PingGoogle_No.isSelected()){pingGoogle		=	"User can Ping Google.ie";			}
 		if (checkBox_PingGoogleIE_Yes.isSelected()){pingGoogle	=	"User can NOT ping google.ie";		}
 		
-		return "Issue Description"
-				+ "<h1>Customer has a no connection issue that started: </h1> " + textField_DateIssueStarted.getText()
-				+ "\nTechnology:\n" + "LTE\n"
-				+ "Device Type\n"
-				+ "Gemtek WLTSS-114"
-				+ "\nEnodb & Cell ID\n"
-				+ "Current Enodb & Cell ID \n"
-				+ "Longitude & Latitude\n"
-				+ textFieldLatAndLong.getText();
+		return "<h2>Issue Description</h2>"
+		+ "Customer has a no connection issue that started: " + textField_DateIssueStarted.getText() + "</br>"
+		+ directConnect + "</br>"
+		+ "\nTechnology:\n" + "LTE\n"
+		+ "<h2>Device Type</h2>\n"
+		+ "Gemtek WLTSS-114"
+		+ "\nEnodb & Cell ID\n"
+		+ "<h2>Current Enodb & Cell ID</h2>\n"
+		+ "<h2>Longitude & Latitude</h2>\n"
+		+ textFieldLatAndLong.getText()
+		+ "<h2>Indoor unit Led Status</h2>"
+		+ "Power: " + powerLight + "\n"
+		+ "Lan 1: " + Lan1 + "\n"
+		+ "Lan 2: " + Lan2 + "\n"
+		+ "System:" + Lan2 + "\n"
+		+ "LTE str:" + Lan2 + "\n"
+		+ "Phone: " + phone + "\n"
+		+ "<h3>List clear steps taken to resolve the issue</h3>\n"
+		+ "-" +  WAN
+		+ "-" + pingRouter + "<br>\n"
+		+ "-" + pingRadio  + "<br>\n"
+		+ "-" + pingEight  + "<br>\n"
+		+ "-" + pingGoogle + "<br>\n";
+		
 
 		
-		
-
 /*
-		Longitude & Latitude
-
-		Provide a screenshot of the coverage map & elevation profile
-		Indoor unit Led Status
-
-		Provide accurate leds status of the indoor unit e.g Power Light Flashing Green - Wifi Light On - LTE light OFF
-		Resolution Steps
-
-		List clear steps taken to resolve the issue
+		
 
 		LTE NO CONNECTION – CPE NOT ACCESSIBLE REMOTELY
 
