@@ -742,7 +742,7 @@ public class NoConnection_GEM extends JPanel {
 		if (checkBox_5G_On.isSelected()){fiveG="On";}
 		if (checkBox_5G_Off.isSelected()){fiveG="Off";}
 
-
+		
 		if (checkBox_Phone_On.isSelected()){phone="On";}
 		if (checkBox_Phone_Off.isSelected()){phone="Off";}
 		if (checkBox_WAN_YES.isSelected()){WAN = "WAN cable is in the right slot.";}
@@ -787,36 +787,38 @@ public class NoConnection_GEM extends JPanel {
 		String system = "", Lan1="",Lan2="",twoG="",fiveG="",phone="",WAN="",directConnect ="",pingRouter="",pingRadio="",pingEight="",pingGoogle="";
 		//If user can log into system.
 		
+		//other
+		String offlineCSR = "", offlineWallgarden = "";
 		
-		if (checkBox_PowerOn.isSelected()){powerLight = "On";}
-		if (checkBox_Off_Power.isSelected()){powerLight = "Off";}
-		if (checkBox_AccessRouterYes.isSelected()){canLogin="I have access to the router.";}else{canLogin="I don't have access to the router.";}
-		if (checkBox_LTESTR1.isSelected()){strOne = "On";}else{strOne ="Off";}
-		if (checkBox_LTESTR2.isSelected()){strTwo = "On";}else{strTwo ="Off";}
-		if (checkBox_LTESTR3.isSelected()){strThree = "On";}else{strThree ="Off";}
-		if (checkBox_LTESTR4.isSelected()){strFour = "On";}else{strFour ="Off";}
-		if (checkBox_LTESTR5.isSelected()){strFive = "On";}else{strFive ="Off";}
-		if (checkBox_SystemOff.isSelected()){system = "Off";}
-		if (checkBox_SystemOn.isSelected()){system = "On";}
-		if (checkBox_Lan1On.isSelected()){Lan1 = "On";}
-		if (checkBox_Lan1Off.isSelected()){Lan1 = "Off";}
-		if (checkBox_Lan2_On.isSelected()){Lan2 = "On";}
-		if (checkBox_Lan2_Off.isSelected()){Lan2 = "Off";}
-		if (checkBox_2G_On.isSelected()){twoG="On";}
-		if (checkBox_2GOff.isSelected()){twoG="Off";}
-		if (checkBox_5G_On.isSelected()){fiveG="On";}
-		if (checkBox_5G_Off.isSelected()){fiveG="Off";}
+		if (checkBox_PowerOn.isSelected()){powerLight = "<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Off_Power.isSelected()){powerLight = "<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_AccessRouterYes.isSelected()){canLogin="I have access to the router.</font>";}else{canLogin="I don't have access to the router.";}
+		if (checkBox_LTESTR1.isSelected()){strOne = "<font size=\"3\" color=\"green\">On</font>";}else{strOne ="Off";}
+		if (checkBox_LTESTR2.isSelected()){strTwo = "<font size=\"3\" color=\"green\">On</font>";}else{strTwo ="Off";}
+		if (checkBox_LTESTR3.isSelected()){strThree = "<font size=\"3\" color=\"green\">On</font>";}else{strThree ="Off";}
+		if (checkBox_LTESTR4.isSelected()){strFour = "<font size=\"3\" color=\"green\">On</font>";}else{strFour ="Off";}
+		if (checkBox_LTESTR5.isSelected()){strFive = "<font size=\"3\" color=\"green\">On</font>";}else{strFive ="Off";}
+		if (checkBox_SystemOff.isSelected()){system = "<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_SystemOn.isSelected()){system = "<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Lan1On.isSelected()){Lan1 = "<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Lan1Off.isSelected()){Lan1 = "<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_Lan2_On.isSelected()){Lan2 = "<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Lan2_Off.isSelected()){Lan2 = "<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_2G_On.isSelected()){twoG="<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_2GOff.isSelected()){twoG="<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_5G_On.isSelected()){fiveG="<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_5G_Off.isSelected()){fiveG="<font size=\"3\" color=\"red\">Off</font>";}
 		
 		
 
 		//+ "Phone: " + ;
 		
 
-		if (checkBox_Phone_On.isSelected()){phone="On";}
-		if (checkBox_Phone_Off.isSelected()){phone="Off";}
+		if (checkBox_Phone_On.isSelected()){phone="<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Phone_Off.isSelected()){phone="<font size=\"3\" color=\"red\">Off</font>";}
 		if (checkBox_WAN_YES.isSelected()){WAN = "WAN cable is in the right slot.";}
 		if (checkBox_PC_Done.isSelected()){WAN = "Power cycled the rotuer.";}
-		if (checkBox_DirectCon_Done.isSelected()){directConnect = 	"The customer is testing over direct connection.";}
+		if (checkBox_DirectCon_Done.isSelected()){directConnect = 	"The customer is testing with an ethernet connection.";}
 		if (checkBox_PingRouter_Yes.isSelected()){pingRouter 	= 	"Customer can ping radio.";			}
 		if (checkBox_PingRouter_No.isSelected()){pingRouter 	= 	"Customer can NOT ping the radio.";	}
 		if (checkBox_PingRadio_Yes.isSelected()){pingRadio 		= 	"User can ping the radio.";			}
@@ -828,20 +830,20 @@ public class NoConnection_GEM extends JPanel {
 		return "<h2>Issue Description</h2>"
 		+ "Customer has a no connection issue that started: " + textField_DateIssueStarted.getText() + "</br>"
 		+ directConnect + "</br>"
-		+ "\nTechnology:\n" + "LTE\n"
+		+ "\nTechnology:\n" + "LTE \n"
 		+ "<h2>Device Type</h2>\n"
 		+ "Gemtek WLTSS-114"
-		+ "\nEnodb & Cell ID\n"
-		+ "<h2>Current Enodb & Cell ID</h2>\n"
+		+ "<h2>Enodb & Cell ID</h2>"
+		+ "Current Enodb & Cell ID\n"
 		+ "<h2>Longitude & Latitude</h2>\n"
 		+ textFieldLatAndLong.getText()
 		+ "<h2>Indoor unit Led Status</h2>"
-		+ "Power: " + powerLight + "\n"
-		+ "Lan 1: " + Lan1 + "\n"
-		+ "Lan 2: " + Lan2 + "\n"
-		+ "System:" + Lan2 + "\n"
-		+ "LTE str:" + Lan2 + "\n"
-		+ "Phone: " + phone + "\n"
+		+ "Power: " + powerLight + "<br>"
+		+ "Lan 1: " + Lan1 + "<br>\n"
+		+ "Lan 2: " + Lan2 + "<br>\n"
+		+ "System:" + Lan2 + "<br>\n"
+		+ "LTE str:" + Lan2 + "<br>\n"
+		+ "Phone: " + phone + "<br>\n"
 		+ "<h3>List clear steps taken to resolve the issue</h3>\n"
 		+ "-" +  WAN
 		+ "-" + pingRouter + "<br>\n"

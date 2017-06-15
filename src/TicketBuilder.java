@@ -76,7 +76,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		jta.setContentType("text/html");
 		testpan.add(jta);
 
-		export_Escalation.add(testpan,BorderLayout.CENTER);
+		export_Escalation.getContentPane().add(testpan,BorderLayout.CENTER);
 		NoConGEM = new NoConnection_GEM();
 		
 		setBounds(100, 100, 922, 900);
@@ -206,6 +206,13 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		gbc_btnExportEsc.gridx = 8;
 		gbc_btnExportEsc.gridy = 3;
 		JP_Options.add(btnExportEsc, gbc_btnExportEsc);
+		
+		JButton btnClear = new JButton("Clear");
+		GridBagConstraints gbc_btnClear = new GridBagConstraints();
+		gbc_btnClear.insets = new Insets(0, 0, 5, 5);
+		gbc_btnClear.gridx = 15;
+		gbc_btnClear.gridy = 3;
+		JP_Options.add(btnClear, gbc_btnClear);
 		btnExportEsc.addActionListener(this);
 		
 		JPanel Builder = new JPanel();
