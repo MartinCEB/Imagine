@@ -39,6 +39,8 @@ public class TicketBuilder extends JFrame implements ActionListener {
 	NoConnection_GEM NoConGEM;
 	JFrame export_Ticket, export_Escalation;
 	JTextPane jta;
+	public JComboBox comboBox_Router;
+	public JComboBox comboBox_Tech;
 	/**
 	 * Launch the application.
 	 */
@@ -77,7 +79,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		testpan.add(jta);
 
 		export_Escalation.getContentPane().add(testpan,BorderLayout.CENTER);
-		NoConGEM = new NoConnection_GEM();
+		NoConGEM = new NoConnection_GEM(this);
 		
 		setBounds(100, 100, 922, 900);
 		MasterPane = new JPanel();
@@ -135,12 +137,11 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		JP_Options.add(lblRouter, gbc_lblRouter);
 		
 		
-		JComboBox comboBox_Router = new JComboBox();
+		comboBox_Router = new JComboBox();
 		ArrayList<String> ls = new ArrayList<String>();
 		ls.add("GemTech6");
 		ls.add("Green Packet");
 		comboBox_Router.setModel(new DefaultComboBoxModel(ls.toArray()));
-		
 		comboBox_Router.addActionListener (new ActionListener () {
 		    public void actionPerformed(ActionEvent e) {
 		        test();
@@ -182,7 +183,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		gbc_lblWhatTech.gridy = 2;
 		JP_Options.add(lblWhatTech, gbc_lblWhatTech);
 		
-		JComboBox comboBox_Tech = new JComboBox();
+		comboBox_Tech = new JComboBox();
 		GridBagConstraints gbc_comboBox_Tech = new GridBagConstraints();
 		gbc_comboBox_Tech.fill = GridBagConstraints.BOTH;
 		gbc_comboBox_Tech.gridwidth = 5;

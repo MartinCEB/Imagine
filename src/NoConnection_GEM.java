@@ -75,7 +75,9 @@ public class NoConnection_GEM extends JPanel {
 	private JLabel lblCurrentCellId;
 	private JTextField textField_CurrentENode;
 	private JTextField textFieldCurrentCellID;
-	public NoConnection_GEM() {
+	TicketBuilder TB;
+	public NoConnection_GEM(TicketBuilder TB) {
+		this.TB = TB;
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{769, 0};
 		gridBagLayout.rowHeights = new int[]{819, 0};
@@ -726,11 +728,11 @@ public class NoConnection_GEM extends JPanel {
 		if (checkBox_Off_Power.isSelected()){powerLight = "Off";}
 		if (checkBox_AccessRouterYes.isSelected()){canLogin="I have access to the router.";}else{canLogin="I don't have access to the router.";}
 		//Lights:
-		if (checkBox_LTESTR1.isSelected()){strOne = "On";}else{strOne ="Off";}
-		if (checkBox_LTESTR2.isSelected()){strTwo = "On";}else{strTwo ="Off";}
-		if (checkBox_LTESTR3.isSelected()){strThree = "On";}else{strThree ="Off";}
-		if (checkBox_LTESTR4.isSelected()){strFour = "On";}else{strFour ="Off";}
-		if (checkBox_LTESTR5.isSelected()){strFive = "On";}else{strFive ="Off";}
+		if (checkBox_LTESTR1.isSelected()){strOne = "1";}
+		if (checkBox_LTESTR2.isSelected()){strTwo = "2";}
+		if (checkBox_LTESTR3.isSelected()){strThree = "3";}
+		if (checkBox_LTESTR4.isSelected()){strFour = "4";}
+		if (checkBox_LTESTR5.isSelected()){strFive = "5";}
 		if (checkBox_SystemOff.isSelected()){system = "Off";}
 		if (checkBox_SystemOn.isSelected()){system = "On";}
 		if (checkBox_Lan1On.isSelected()){Lan1 = "On";}
@@ -781,6 +783,7 @@ public class NoConnection_GEM extends JPanel {
 				+ canLogin + "\n";
 	}
 	
+	//generate esclation
 	public String generateUNO()
 	{
 		String powerLight = "", canLogin = "",strOne = "" ,strTwo = "",strThree="",strFour="",strFive="";
@@ -849,16 +852,17 @@ public class NoConnection_GEM extends JPanel {
 		+ "-" + pingRouter + "<br>\n"
 		+ "-" + pingRadio  + "<br>\n"
 		+ "-" + pingEight  + "<br>\n"
-		+ "-" + pingGoogle + "<br>\n";
-		
+		+ "-" + pingGoogle + "<br>\n"
+		+ "<h2>LTE NO CONNECTION – CPE NOT ACCESSIBLE REMOTELY</h2><br>"
+		+ "Identify customer CPE type<br>"
+		+ TB.comboBox_Router.getSelectedItem().toString() + "<br>"
+		+ "Ask customer when the service went down<br>"
+		+ textField_DateIssueStarted.getText();
 
 		
 /*
 		
 
-		LTE NO CONNECTION – CPE NOT ACCESSIBLE REMOTELY
-
-		1. Identify customer CPE type
 
 		2. Ask customer when the service went down
 
