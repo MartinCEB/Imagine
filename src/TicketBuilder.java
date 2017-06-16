@@ -3,22 +3,28 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultComboBoxModel;
+
 import java.awt.CardLayout;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
@@ -31,10 +37,14 @@ public class TicketBuilder extends JFrame implements ActionListener {
 	private JTextField textField;
 	JButton btnGenerate;
 	NoConnection_GEM NoConGEM;
-	
+	JFrame export_Ticket, export_Escalation;
+	JTextPane jta;
+	public JComboBox comboBox_Router;
+	public JComboBox comboBox_Tech;
 	/**
 	 * Launch the application.
 	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -51,9 +61,25 @@ public class TicketBuilder extends JFrame implements ActionListener {
 	/**
 	 * Create the frame.
 	 */
+	public void test()
+	{
+		System.out.println("no no no ");
+	}
 	public TicketBuilder() {
 		
-		NoConGEM = new NoConnection_GEM();
+		//Set up Jframes for showing exports
+		export_Escalation = new JFrame();
+		export_Escalation.setSize(500, 500);
+		export_Escalation.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		export_Escalation.setVisible(true);
+		jta 	= new JTextPane();
+		JPanel testpan 	= new JPanel(new BorderLayout());
+		
+		jta.setContentType("text/html");
+		testpan.add(jta);
+
+		export_Escalation.getContentPane().add(testpan,BorderLayout.CENTER);
+		NoConGEM = new NoConnection_GEM(this);
 		
 		setBounds(100, 100, 922, 900);
 		MasterPane = new JPanel();
@@ -110,7 +136,18 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		gbc_lblRouter.gridy = 1;
 		JP_Options.add(lblRouter, gbc_lblRouter);
 		
-		JComboBox comboBox_Router = new JComboBox();
+		
+		comboBox_Router = new JComboBox();
+		ArrayList<String> ls = new ArrayList<String>();
+		ls.add("GemTech6");
+		ls.add("Green Packet");
+		comboBox_Router.setModel(new DefaultComboBoxModel(ls.toArray()));
+		comboBox_Router.addActionListener (new ActionListener () {
+		    public void actionPerformed(ActionEvent e) {
+		        test();
+		    }
+		});
+		
 		GridBagConstraints gbc_comboBox_Router = new GridBagConstraints();
 		gbc_comboBox_Router.fill = GridBagConstraints.BOTH;
 		gbc_comboBox_Router.gridwidth = 5;
@@ -146,7 +183,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		gbc_lblWhatTech.gridy = 2;
 		JP_Options.add(lblWhatTech, gbc_lblWhatTech);
 		
-		JComboBox comboBox_Tech = new JComboBox();
+		comboBox_Tech = new JComboBox();
 		GridBagConstraints gbc_comboBox_Tech = new GridBagConstraints();
 		gbc_comboBox_Tech.fill = GridBagConstraints.BOTH;
 		gbc_comboBox_Tech.gridwidth = 5;
@@ -163,6 +200,21 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		gbc_btnGenerate.gridx = 1;
 		gbc_btnGenerate.gridy = 3;
 		JP_Options.add(btnGenerate, gbc_btnGenerate);
+		
+		JButton btnExportEsc = new JButton("Export ESC");
+		GridBagConstraints gbc_btnExportEsc = new GridBagConstraints();
+		gbc_btnExportEsc.insets = new Insets(0, 0, 5, 5);
+		gbc_btnExportEsc.gridx = 8;
+		gbc_btnExportEsc.gridy = 3;
+		JP_Options.add(btnExportEsc, gbc_btnExportEsc);
+		
+		JButton btnClear = new JButton("Clear");
+		GridBagConstraints gbc_btnClear = new GridBagConstraints();
+		gbc_btnClear.insets = new Insets(0, 0, 5, 5);
+		gbc_btnClear.gridx = 15;
+		gbc_btnClear.gridy = 3;
+		JP_Options.add(btnClear, gbc_btnClear);
+		btnExportEsc.addActionListener(this);
 		
 		JPanel Builder = new JPanel();
 		GridBagConstraints gbc_Builder = new GridBagConstraints();
@@ -181,7 +233,7 @@ public class TicketBuilder extends JFrame implements ActionListener {
 		gbl_Builder.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_Builder.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		Builder.setLayout(gbl_Builder);
-	
+		System.out.println("Test:  " +  (String)comboBox_Router.getSelectedItem());
 	}
 
 	@Override
@@ -190,9 +242,15 @@ public class TicketBuilder extends JFrame implements ActionListener {
 			if (source.getText() == "Generate")
 			{
 				System.out.println("Clicked" + source.getText());
-				System.out.println(NoConGEM.exportUnoTicket());
+				System.out.println(NoConGEM.generateUNO());
+				jta.setText(NoConGEM.generateUNO());
+			}
+			if (source.getText()=="Export ESC")
+			{
+				
 			}
 	}
+
 	private JPanel getCurrentBuilder()
 	{
 		return NoConGEM.getJpanel();

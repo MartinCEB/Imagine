@@ -71,13 +71,18 @@ public class NoConnection_GEM extends JPanel {
 	private JLabel lblNewMoveConnection;
 	private JCheckBox chckbxYes_ConnectionMoved;
 	private JCheckBox chckbxNo_ConnectionMoved;
-	public NoConnection_GEM() {
-		
+	private JLabel lblCurrentEnode;
+	private JLabel lblCurrentCellId;
+	private JTextField textField_CurrentENode;
+	private JTextField textFieldCurrentCellID;
+	TicketBuilder TB;
+	public NoConnection_GEM(TicketBuilder TB) {
+		this.TB = TB;
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{769, 0};
+		gridBagLayout.rowHeights = new int[]{819, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		NoConnection_Gem = new JPanel();
@@ -89,7 +94,7 @@ public class NoConnection_GEM extends JPanel {
 		GridBagLayout gbl_NoConnection_Gem = new GridBagLayout();
 		gbl_NoConnection_Gem.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_NoConnection_Gem.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_NoConnection_Gem.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_NoConnection_Gem.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_NoConnection_Gem.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		NoConnection_Gem.setLayout(gbl_NoConnection_Gem);
 		
@@ -471,14 +476,14 @@ public class NoConnection_GEM extends JPanel {
 		gbc_lblChangeWifiChannel.gridy = 12;
 		NoConnection_Gem.add(lblChangeWifiChannel, gbc_lblChangeWifiChannel);
 		
-		JLabel label_WanCable = new JLabel("Is WAN cable in the right slot?");
-		GridBagConstraints gbc_label_WanCable = new GridBagConstraints();
-		gbc_label_WanCable.fill = GridBagConstraints.BOTH;
-		gbc_label_WanCable.gridwidth = 5;
-		gbc_label_WanCable.insets = new Insets(0, 0, 5, 5);
-		gbc_label_WanCable.gridx = 2;
-		gbc_label_WanCable.gridy = 13;
-		NoConnection_Gem.add(label_WanCable, gbc_label_WanCable);
+		JLabel label_WanCable_1 = new JLabel("Is WAN cable in the right slot?");
+		GridBagConstraints gbc_label_WanCable_1 = new GridBagConstraints();
+		gbc_label_WanCable_1.fill = GridBagConstraints.BOTH;
+		gbc_label_WanCable_1.gridwidth = 5;
+		gbc_label_WanCable_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_WanCable_1.gridx = 2;
+		gbc_label_WanCable_1.gridy = 13;
+		NoConnection_Gem.add(label_WanCable_1, gbc_label_WanCable_1);
 		
 		checkBox_WAN_YES = new JCheckBox("Yes");
 		GridBagConstraints gbc_checkBox_WAN_YES = new GridBagConstraints();
@@ -496,14 +501,14 @@ public class NoConnection_GEM extends JPanel {
 		gbc_lblEsclationDetails.gridy = 13;
 		NoConnection_Gem.add(lblEsclationDetails, gbc_lblEsclationDetails);
 		
-		JLabel label_PowerCycle = new JLabel("Power Cycle");
-		GridBagConstraints gbc_label_PowerCycle = new GridBagConstraints();
-		gbc_label_PowerCycle.fill = GridBagConstraints.BOTH;
-		gbc_label_PowerCycle.anchor = GridBagConstraints.WEST;
-		gbc_label_PowerCycle.insets = new Insets(0, 0, 5, 5);
-		gbc_label_PowerCycle.gridx = 2;
-		gbc_label_PowerCycle.gridy = 14;
-		NoConnection_Gem.add(label_PowerCycle, gbc_label_PowerCycle);
+		JLabel label_PowerCycle_1 = new JLabel("Power Cycle");
+		GridBagConstraints gbc_label_PowerCycle_1 = new GridBagConstraints();
+		gbc_label_PowerCycle_1.fill = GridBagConstraints.BOTH;
+		gbc_label_PowerCycle_1.anchor = GridBagConstraints.WEST;
+		gbc_label_PowerCycle_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_PowerCycle_1.gridx = 2;
+		gbc_label_PowerCycle_1.gridy = 14;
+		NoConnection_Gem.add(label_PowerCycle_1, gbc_label_PowerCycle_1);
 		
 		checkBox_PC_Done = new JCheckBox("Done");
 		GridBagConstraints gbc_checkBox_PC_Done = new GridBagConstraints();
@@ -530,13 +535,13 @@ public class NoConnection_GEM extends JPanel {
 		NoConnection_Gem.add(textFieldLatAndLong, gbc_textFieldLatAndLong);
 		textFieldLatAndLong.setColumns(10);
 		
-		JLabel label_PowerCycle_l = new JLabel("User Direct connect");
-		GridBagConstraints gbc_label_PowerCycle_l = new GridBagConstraints();
-		gbc_label_PowerCycle_l.anchor = GridBagConstraints.WEST;
-		gbc_label_PowerCycle_l.insets = new Insets(0, 0, 5, 5);
-		gbc_label_PowerCycle_l.gridx = 2;
-		gbc_label_PowerCycle_l.gridy = 15;
-		NoConnection_Gem.add(label_PowerCycle_l, gbc_label_PowerCycle_l);
+		JLabel label_PowerCycle_l_1 = new JLabel("User Direct connect");
+		GridBagConstraints gbc_label_PowerCycle_l_1 = new GridBagConstraints();
+		gbc_label_PowerCycle_l_1.anchor = GridBagConstraints.WEST;
+		gbc_label_PowerCycle_l_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_PowerCycle_l_1.gridx = 2;
+		gbc_label_PowerCycle_l_1.gridy = 15;
+		NoConnection_Gem.add(label_PowerCycle_l_1, gbc_label_PowerCycle_l_1);
 		
 		checkBox_DirectCon_Done = new JCheckBox("Done");
 		GridBagConstraints gbc_checkBox_DirectCon_Done = new GridBagConstraints();
@@ -589,6 +594,24 @@ public class NoConnection_GEM extends JPanel {
 		gbc_checkBox_PingRouter_No.gridy = 16;
 		NoConnection_Gem.add(checkBox_PingRouter_No, gbc_checkBox_PingRouter_No);
 		
+		lblCurrentEnode = new JLabel("Current Enode");
+		GridBagConstraints gbc_lblCurrentEnode = new GridBagConstraints();
+		gbc_lblCurrentEnode.anchor = GridBagConstraints.WEST;
+		gbc_lblCurrentEnode.insets = new Insets(0, 0, 5, 5);
+		gbc_lblCurrentEnode.gridx = 12;
+		gbc_lblCurrentEnode.gridy = 16;
+		NoConnection_Gem.add(lblCurrentEnode, gbc_lblCurrentEnode);
+		
+		textField_CurrentENode = new JTextField();
+		GridBagConstraints gbc_textField_CurrentENode = new GridBagConstraints();
+		gbc_textField_CurrentENode.gridwidth = 2;
+		gbc_textField_CurrentENode.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_CurrentENode.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_CurrentENode.gridx = 16;
+		gbc_textField_CurrentENode.gridy = 16;
+		NoConnection_Gem.add(textField_CurrentENode, gbc_textField_CurrentENode);
+		textField_CurrentENode.setColumns(10);
+		
 		JLabel label_CanPingRadio = new JLabel("Can Ping radio");
 		GridBagConstraints gbc_label_CanPingRadio = new GridBagConstraints();
 		gbc_label_CanPingRadio.anchor = GridBagConstraints.WEST;
@@ -613,13 +636,31 @@ public class NoConnection_GEM extends JPanel {
 		gbc_checkBox_Ping_Radio_No.gridy = 17;
 		NoConnection_Gem.add(checkBox_Ping_Radio_No, gbc_checkBox_Ping_Radio_No);
 		
-		JLabel label_PinEight = new JLabel("Can Ping 8.8.8.8");
-		GridBagConstraints gbc_label_PinEight = new GridBagConstraints();
-		gbc_label_PinEight.anchor = GridBagConstraints.WEST;
-		gbc_label_PinEight.insets = new Insets(0, 0, 5, 5);
-		gbc_label_PinEight.gridx = 2;
-		gbc_label_PinEight.gridy = 18;
-		NoConnection_Gem.add(label_PinEight, gbc_label_PinEight);
+		lblCurrentCellId = new JLabel("Current Cell ID");
+		GridBagConstraints gbc_lblCurrentCellId = new GridBagConstraints();
+		gbc_lblCurrentCellId.anchor = GridBagConstraints.WEST;
+		gbc_lblCurrentCellId.insets = new Insets(0, 0, 5, 5);
+		gbc_lblCurrentCellId.gridx = 12;
+		gbc_lblCurrentCellId.gridy = 17;
+		NoConnection_Gem.add(lblCurrentCellId, gbc_lblCurrentCellId);
+		
+		textFieldCurrentCellID = new JTextField();
+		GridBagConstraints gbc_textFieldCurrentCellID = new GridBagConstraints();
+		gbc_textFieldCurrentCellID.gridwidth = 2;
+		gbc_textFieldCurrentCellID.insets = new Insets(0, 0, 5, 5);
+		gbc_textFieldCurrentCellID.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textFieldCurrentCellID.gridx = 16;
+		gbc_textFieldCurrentCellID.gridy = 17;
+		NoConnection_Gem.add(textFieldCurrentCellID, gbc_textFieldCurrentCellID);
+		textFieldCurrentCellID.setColumns(10);
+		
+		JLabel label_PinEight_1 = new JLabel("Can Ping 8.8.8.8");
+		GridBagConstraints gbc_label_PinEight_1 = new GridBagConstraints();
+		gbc_label_PinEight_1.anchor = GridBagConstraints.WEST;
+		gbc_label_PinEight_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_PinEight_1.gridx = 2;
+		gbc_label_PinEight_1.gridy = 18;
+		NoConnection_Gem.add(label_PinEight_1, gbc_label_PinEight_1);
 		
 		checkBox_PingEight_Yes = new JCheckBox("Yes");
 		GridBagConstraints gbc_checkBox_PingEight_Yes = new GridBagConstraints();
@@ -646,28 +687,28 @@ public class NoConnection_GEM extends JPanel {
 		NoConnection_Gem.add(label_GoogleIE, gbc_label_GoogleIE);
 		
 		 checkBox_PingGoogleIE_Yes = new JCheckBox("Yes");
-		GridBagConstraints gbc_checkBox_PingGoogleIE_Yes = new GridBagConstraints();
-		gbc_checkBox_PingGoogleIE_Yes.anchor = GridBagConstraints.WEST;
-		gbc_checkBox_PingGoogleIE_Yes.insets = new Insets(0, 0, 5, 5);
-		gbc_checkBox_PingGoogleIE_Yes.gridx = 8;
-		gbc_checkBox_PingGoogleIE_Yes.gridy = 19;
-		NoConnection_Gem.add(checkBox_PingGoogleIE_Yes, gbc_checkBox_PingGoogleIE_Yes);
-		
-		checkBox_PingGoogle_No = new JCheckBox("No");
-		GridBagConstraints gbc_checkBox_PingGoogle_No = new GridBagConstraints();
-		gbc_checkBox_PingGoogle_No.anchor = GridBagConstraints.WEST;
-		gbc_checkBox_PingGoogle_No.insets = new Insets(0, 0, 5, 5);
-		gbc_checkBox_PingGoogle_No.gridx = 10;
-		gbc_checkBox_PingGoogle_No.gridy = 19;
-		NoConnection_Gem.add(checkBox_PingGoogle_No, gbc_checkBox_PingGoogle_No);
-		
-		
-		//Don't remove this, it messes with the layout, will remove later
-		JLabel label_19 = new JLabel("New label");
-		GridBagConstraints gbc_label_19 = new GridBagConstraints();
-		gbc_label_19.gridx = 25;
-		gbc_label_19.gridy = 28;
-		NoConnection_Gem.add(label_19, gbc_label_19);
+		 GridBagConstraints gbc_checkBox_PingGoogleIE_Yes = new GridBagConstraints();
+		 gbc_checkBox_PingGoogleIE_Yes.anchor = GridBagConstraints.WEST;
+		 gbc_checkBox_PingGoogleIE_Yes.insets = new Insets(0, 0, 5, 5);
+		 gbc_checkBox_PingGoogleIE_Yes.gridx = 8;
+		 gbc_checkBox_PingGoogleIE_Yes.gridy = 19;
+		 NoConnection_Gem.add(checkBox_PingGoogleIE_Yes, gbc_checkBox_PingGoogleIE_Yes);
+		 
+		 checkBox_PingGoogle_No = new JCheckBox("No");
+		 GridBagConstraints gbc_checkBox_PingGoogle_No = new GridBagConstraints();
+		 gbc_checkBox_PingGoogle_No.anchor = GridBagConstraints.WEST;
+		 gbc_checkBox_PingGoogle_No.insets = new Insets(0, 0, 5, 5);
+		 gbc_checkBox_PingGoogle_No.gridx = 10;
+		 gbc_checkBox_PingGoogle_No.gridy = 19;
+		 NoConnection_Gem.add(checkBox_PingGoogle_No, gbc_checkBox_PingGoogle_No);
+		 
+		 
+		 //Don't remove this, it messes with the layout, will remove later
+		 JLabel label_19 = new JLabel("New label");
+		 GridBagConstraints gbc_label_19 = new GridBagConstraints();
+		 gbc_label_19.gridx = 25;
+		 gbc_label_19.gridy = 28;
+		 NoConnection_Gem.add(label_19, gbc_label_19);
 		
 
 	}
@@ -687,11 +728,11 @@ public class NoConnection_GEM extends JPanel {
 		if (checkBox_Off_Power.isSelected()){powerLight = "Off";}
 		if (checkBox_AccessRouterYes.isSelected()){canLogin="I have access to the router.";}else{canLogin="I don't have access to the router.";}
 		//Lights:
-		if (checkBox_LTESTR1.isSelected()){strOne = "On";}else{strOne ="Off";}
-		if (checkBox_LTESTR2.isSelected()){strTwo = "On";}else{strTwo ="Off";}
-		if (checkBox_LTESTR3.isSelected()){strThree = "On";}else{strThree ="Off";}
-		if (checkBox_LTESTR4.isSelected()){strFour = "On";}else{strFour ="Off";}
-		if (checkBox_LTESTR5.isSelected()){strFive = "On";}else{strFive ="Off";}
+		if (checkBox_LTESTR1.isSelected()){strOne = "1";}
+		if (checkBox_LTESTR2.isSelected()){strTwo = "2";}
+		if (checkBox_LTESTR3.isSelected()){strThree = "3";}
+		if (checkBox_LTESTR4.isSelected()){strFour = "4";}
+		if (checkBox_LTESTR5.isSelected()){strFive = "5";}
 		if (checkBox_SystemOff.isSelected()){system = "Off";}
 		if (checkBox_SystemOn.isSelected()){system = "On";}
 		if (checkBox_Lan1On.isSelected()){Lan1 = "On";}
@@ -703,7 +744,7 @@ public class NoConnection_GEM extends JPanel {
 		if (checkBox_5G_On.isSelected()){fiveG="On";}
 		if (checkBox_5G_Off.isSelected()){fiveG="Off";}
 
-
+		
 		if (checkBox_Phone_On.isSelected()){phone="On";}
 		if (checkBox_Phone_Off.isSelected()){phone="Off";}
 		if (checkBox_WAN_YES.isSelected()){WAN = "WAN cable is in the right slot.";}
@@ -742,52 +783,133 @@ public class NoConnection_GEM extends JPanel {
 				+ canLogin + "\n";
 	}
 	
+	//generate esclation
 	public String generateUNO()
 	{
-		String powerLight = "", canLogin = "",strOne = "" ,strTwo = "",strThree="",strFour="",strFive="";
+		String powerLight = "", canLogin = "",Signalstr = "";
 		String system = "", Lan1="",Lan2="",twoG="",fiveG="",phone="",WAN="",directConnect ="",pingRouter="",pingRadio="",pingEight="",pingGoogle="";
+		//If user can log into system.
+		String outage = "", customerMoved = "", accessToRouter = "";
+		//other
+		String offlineCSR = "", offlineWallgarden = "";
 		
+		if (checkBox_PowerOn.isSelected()){powerLight 		= 	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Off_Power.isSelected()){powerLight 	= 	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_AccessRouterYes.isSelected()){canLogin	=	"I have access to the router.</font>";}else{canLogin="I don't have access to the router.";}
+		if (checkBox_LTESTR1.isSelected()){Signalstr 			= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 	=	"1 Strength Light is on";}
+		if (checkBox_LTESTR2.isSelected()){Signalstr 			= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 	=	"2 Strength Lights is on";}
+		if (checkBox_LTESTR3.isSelected()){Signalstr 		= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 		=	"3 Strength are Lights is on";}
+		if (checkBox_LTESTR4.isSelected()){Signalstr 			= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 	=	"4 Strength Lights is on";}
+		if (checkBox_LTESTR5.isSelected()){Signalstr 			= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 	=	"5 Strength Lights is on";}
+		if (checkBox_SystemOff.isSelected()){system 		= 	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_SystemOn.isSelected()){system 			= 	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Lan1On.isSelected()){Lan1 				= 	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Lan1Off.isSelected()){Lan1 			= 	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_Lan2_On.isSelected()){Lan2 			= 	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Lan2_Off.isSelected()){Lan2 			= 	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_2G_On.isSelected()){twoG				=	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_2GOff.isSelected()){twoG				=	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_5G_On.isSelected()){fiveG				=	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_5G_Off.isSelected()){fiveG				=	"<font size=\"3\" color=\"red\">Off</font>";}
 		
-		if (checkBox_PowerOn.isSelected()){powerLight = "On";}
-		if (checkBox_Off_Power.isSelected()){powerLight = "Off";}
-		if (checkBox_AccessRouterYes.isSelected()){canLogin="I have access to the router.";}else{canLogin="I don't have access to the router.";}
-		//Lights:
-		if (checkBox_LTESTR1.isSelected()){strOne = "On";}else{strOne ="Off";}
-		if (checkBox_LTESTR2.isSelected()){strTwo = "On";}else{strTwo ="Off";}
-		if (checkBox_LTESTR3.isSelected()){strThree = "On";}else{strThree ="Off";}
-		if (checkBox_LTESTR4.isSelected()){strFour = "On";}else{strFour ="Off";}
-		if (checkBox_LTESTR5.isSelected()){strFive = "On";}else{strFive ="Off";}
-		if (checkBox_SystemOff.isSelected()){system = "Off";}
-		if (checkBox_SystemOn.isSelected()){system = "On";}
-		if (checkBox_Lan1On.isSelected()){Lan1 = "On";}
-		if (checkBox_Lan1Off.isSelected()){Lan1 = "Off";}
-		if (checkBox_Lan2_On.isSelected()){Lan2 = "On";}
-		if (checkBox_Lan2_Off.isSelected()){Lan2 = "Off";}
-		if (checkBox_2G_On.isSelected()){twoG="On";}
-		if (checkBox_2GOff.isSelected()){twoG="Off";}
-		if (checkBox_5G_On.isSelected()){fiveG="On";}
-		if (checkBox_5G_Off.isSelected()){fiveG="Off";}
 
+		//+ "Phone: " + ;
+		
 
-		if (checkBox_Phone_On.isSelected()){phone="On";}
-		if (checkBox_Phone_Off.isSelected()){phone="Off";}
+		if (checkBox_Phone_On.isSelected()){phone="<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Phone_Off.isSelected()){phone="<font size=\"3\" color=\"red\">Off</font>";}
 		if (checkBox_WAN_YES.isSelected()){WAN = "WAN cable is in the right slot.";}
 		if (checkBox_PC_Done.isSelected()){WAN = "Power cycled the rotuer.";}
-		if (checkBox_DirectCon_Done.isSelected()){directConnect = 	"The customer is testing over direct connection.";}
-		if (checkBox_PingRouter_Yes.isSelected()){pingRouter 	= 	"Customer can ping radio.";			}
-		if (checkBox_PingRouter_No.isSelected()){pingRouter 	= 	"Customer can NOT ping the radio.";	}
-		if (checkBox_PingRadio_Yes.isSelected()){pingRadio 		= 	"User can ping the radio.";			}
-		if (checkBox_Ping_Radio_No.isSelected()){pingRadio 		= 	"User can NOT ping the radio.";		}
-		if (checkBox_PingEight_Yes.isSelected()){pingEight		=	"User can ping 8.8.8.8.";			}
-		if (checkBox_PingGoogle_No.isSelected()){pingGoogle		=	"User can Ping Google.ie";			}
-		if (checkBox_PingGoogleIE_Yes.isSelected()){pingGoogle	=	"User can NOT ping google.ie";		}
+		if (checkBox_DirectCon_Done.isSelected()){directConnect 	= 	"The customer is testing with an ethernet connection.";	}
+		if (checkBox_PingRouter_Yes.isSelected()){pingRouter 		= 	"Customer can ping radio.";								}
+		if (checkBox_PingRouter_No.isSelected()){pingRouter 		= 	"Customer can NOT ping the radio.";						}
+		if (checkBox_PingRadio_Yes.isSelected()){pingRadio 			= 	"User can ping the radio.";								}
+		if (checkBox_Ping_Radio_No.isSelected()){pingRadio 			= 	"User can NOT ping the radio.";							}
+		if (checkBox_PingEight_Yes.isSelected()){pingEight			=	"User can ping 8.8.8.8.";								}
+		if (checkBox_PingGoogle_No.isSelected()){pingGoogle			=	"User can Ping Google.ie";								}
+		if (checkBox_PingGoogleIE_Yes.isSelected()){pingGoogle		=	"User can NOT ping google.ie";							}
+		if (chckbxOutage_Yes.isSelected()) 		{outage 			= 	"There was an outage in the area.";						}
+		if (chckbxOutage_No.isSelected())		{outage 			= 	"There are no outages in the area";						}
+		if (chckbxYes_ConnectionMoved.isSelected()) { 	customerMoved		= "Customer has moved the cabled around before talking with us.";}
+		if (chckbxNo_ConnectionMoved.isSelected() ) { 	customerMoved 		= "Customer has NOT moved the cable before talking with us.";}
+		if (checkBox_AccessRouterYes.isSelected()){		accessToRouter	 	= 	"I have access to the router.";}
+		if (checkBox_AccessRouterNo.isSelected()){		accessToRouter	 	= 	"I do not have access to the router.";}
+
+		return "<h2>Issue Description</h2>"
+		+ "Customer has a no connection issue that started: " + textField_DateIssueStarted.getText() + "</br>"
+		+ directConnect + "</br>"
+		+ "\nTechnology:\n" + "LTE \n"
+		+ "<h2>Device Type</h2>\n"
+		+ "Gemtek WLTSS-114"
+		+ "<h2>Enodb & Cell ID</h2>"
+		+ "Current Enodb & Cell ID\n"
+		+ "<h2>Longitude & Latitude</h2>\n"
+		+ textFieldLatAndLong.getText()
+		+ "<h2>Indoor unit Led Status</h2>"
+		+ "Power: " + powerLight + "<br>"
+		+ "Lan 1: " + Lan1 + "<br>\n"
+		+ "Lan 2: " + Lan2 + "<br>\n"
+		+ "System:" + system + "<br>\n"
+		+ "LTE str:" + Signalstr + "<br>\n"
+		+ "Phone: " + phone + "<br>\n"
+		+ "<h3>List clear steps taken to resolve the issue</h3>\n"
+		+ "-" +  WAN
+		+ "-" + pingRouter + "<br>\n"
+		+ "-" + pingRadio  + "<br>\n"
+		+ "-" + pingEight  + "<br>\n"
+		+ "-" + pingGoogle + "<br>\n"
+		+ "<h2>LTE NO CONNECTION – CPE NOT ACCESSIBLE REMOTELY</h2><br>"
+		+ "Identify customer CPE type<br>"
+		+ TB.comboBox_Router.getSelectedItem().toString() + "<br>"
+		+ "Ask customer when the service went down<br>"
+		+ textField_DateIssueStarted.getText()
+		+ "3. Check if there is any Outage<bt>" 
+		+ "<b>" + outage + "</b><br>"
+		+ "4. Ask customer if any cables was moved:<br>"
+		+ "<br><b>" + customerMoved + "</b><br>"
+		+ "5. Ask customer what the lights status on the indoor unit:<br>"
+		+ "<h2>Indoor unit Led Status</h2>"
+		+ "Power: " + powerLight + "<br>"
+		+ "Lan 1: " + Lan1 + "<br>\n"
+		+ "Lan 2: " + Lan2 + "<br>\n"
+		+ "System:" + system + "<br>\n"
+		+ "LTE str:" + Signalstr + "<br>\n"
+		+ "Phone: " + phone + "<br>\n"
+		+ "7. Check if CPE is accessible<br>"
+		+ "<b>" + accessToRouter + "</b><br>"
+		+ "8. CPE not accessible remotely – Reseat the radio cable and powercycle indoor unit<br>"
+		;
+
 		
-		return "Issue Description"
-				+ "Customer has a no connection issue that started: " + textField_DateIssueStarted.getText()
-				+ "\nTechnology:\n" + "LTE\n"
-				+ "Device Type\n"
-				+ "Gemtek WLTSS-114"
-				+ "\nEnodb & Cell ID\n";
+/*
+
+		6. Check in WG if CPE is returning an IP address
+
+
+		8. CPE not accessible remotely – Reseat the radio cable and powercycle indoor unit
+
+		9. Wait for few minutes for the CPE to make a Network Entry
+
+		10. If Still Offline – Ask customer to ping the indoor router and Outdoor CPE
+
+		11. If reply from indoor and Outdoor – CPE is still offline escalate to 2nd Line
+
+		LTE NO CONNECTION – CPE ACCESSIBLE REMOTELY
+
+		1. Ask the customer to ping the indoor router
+
+		2. Ask the customer to ping the outdoor CPE
+
+		3. Ask the customer to ping 8.8.8.8
+
+		4. Check if you can access the indoor CPE remotely
+
+		5. Get customer to logon to the indoor router (if Greenpacket) and set the WAN IP and DNS
+
+		6. From the CPE ping the indoor router
+
+		7. If pings fail from outdoor to indoor it’s most likely a crimp issue and callout required – escalate to 2nd line for callout approval
+		*/
 
 
 	}
