@@ -786,32 +786,31 @@ public class NoConnection_GEM extends JPanel {
 	//generate esclation
 	public String generateUNO()
 	{
-		String powerLight = "", canLogin = "",strOne = "" ,strTwo = "",strThree="",strFour="",strFive="";
+		String powerLight = "", canLogin = "",Signalstr = "";
 		String system = "", Lan1="",Lan2="",twoG="",fiveG="",phone="",WAN="",directConnect ="",pingRouter="",pingRadio="",pingEight="",pingGoogle="";
 		//If user can log into system.
-		
+		String outage = "", customerMoved = "", accessToRouter = "";
 		//other
 		String offlineCSR = "", offlineWallgarden = "";
 		
-		if (checkBox_PowerOn.isSelected()){powerLight = "<font size=\"3\" color=\"green\">On</font>";}
-		if (checkBox_Off_Power.isSelected()){powerLight = "<font size=\"3\" color=\"red\">Off</font>";}
-		if (checkBox_AccessRouterYes.isSelected()){canLogin="I have access to the router.</font>";}else{canLogin="I don't have access to the router.";}
-		if (checkBox_LTESTR1.isSelected()){strOne = "<font size=\"3\" color=\"green\">On</font>";}else{strOne ="Off";}
-		if (checkBox_LTESTR2.isSelected()){strTwo = "<font size=\"3\" color=\"green\">On</font>";}else{strTwo ="Off";}
-		if (checkBox_LTESTR3.isSelected()){strThree = "<font size=\"3\" color=\"green\">On</font>";}else{strThree ="Off";}
-		if (checkBox_LTESTR4.isSelected()){strFour = "<font size=\"3\" color=\"green\">On</font>";}else{strFour ="Off";}
-		if (checkBox_LTESTR5.isSelected()){strFive = "<font size=\"3\" color=\"green\">On</font>";}else{strFive ="Off";}
-		if (checkBox_SystemOff.isSelected()){system = "<font size=\"3\" color=\"red\">Off</font>";}
-		if (checkBox_SystemOn.isSelected()){system = "<font size=\"3\" color=\"green\">On</font>";}
-		if (checkBox_Lan1On.isSelected()){Lan1 = "<font size=\"3\" color=\"green\">On</font>";}
-		if (checkBox_Lan1Off.isSelected()){Lan1 = "<font size=\"3\" color=\"red\">Off</font>";}
-		if (checkBox_Lan2_On.isSelected()){Lan2 = "<font size=\"3\" color=\"green\">On</font>";}
-		if (checkBox_Lan2_Off.isSelected()){Lan2 = "<font size=\"3\" color=\"red\">Off</font>";}
-		if (checkBox_2G_On.isSelected()){twoG="<font size=\"3\" color=\"green\">On</font>";}
-		if (checkBox_2GOff.isSelected()){twoG="<font size=\"3\" color=\"red\">Off</font>";}
-		if (checkBox_5G_On.isSelected()){fiveG="<font size=\"3\" color=\"green\">On</font>";}
-		if (checkBox_5G_Off.isSelected()){fiveG="<font size=\"3\" color=\"red\">Off</font>";}
-		
+		if (checkBox_PowerOn.isSelected()){powerLight 		= 	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Off_Power.isSelected()){powerLight 	= 	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_AccessRouterYes.isSelected()){canLogin	=	"I have access to the router.</font>";}else{canLogin="I don't have access to the router.";}
+		if (checkBox_LTESTR1.isSelected()){Signalstr 			= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 	=	"1 Strength Light is on";}
+		if (checkBox_LTESTR2.isSelected()){Signalstr 			= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 	=	"2 Strength Lights is on";}
+		if (checkBox_LTESTR3.isSelected()){Signalstr 		= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 		=	"3 Strength are Lights is on";}
+		if (checkBox_LTESTR4.isSelected()){Signalstr 			= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 	=	"4 Strength Lights is on";}
+		if (checkBox_LTESTR5.isSelected()){Signalstr 			= 	"<font size=\"3\" color=\"green\">On</font>";}else{Signalstr 	=	"5 Strength Lights is on";}
+		if (checkBox_SystemOff.isSelected()){system 		= 	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_SystemOn.isSelected()){system 			= 	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Lan1On.isSelected()){Lan1 				= 	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Lan1Off.isSelected()){Lan1 			= 	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_Lan2_On.isSelected()){Lan2 			= 	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_Lan2_Off.isSelected()){Lan2 			= 	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_2G_On.isSelected()){twoG				=	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_2GOff.isSelected()){twoG				=	"<font size=\"3\" color=\"red\">Off</font>";}
+		if (checkBox_5G_On.isSelected()){fiveG				=	"<font size=\"3\" color=\"green\">On</font>";}
+		if (checkBox_5G_Off.isSelected()){fiveG				=	"<font size=\"3\" color=\"red\">Off</font>";}
 		
 
 		//+ "Phone: " + ;
@@ -821,15 +820,21 @@ public class NoConnection_GEM extends JPanel {
 		if (checkBox_Phone_Off.isSelected()){phone="<font size=\"3\" color=\"red\">Off</font>";}
 		if (checkBox_WAN_YES.isSelected()){WAN = "WAN cable is in the right slot.";}
 		if (checkBox_PC_Done.isSelected()){WAN = "Power cycled the rotuer.";}
-		if (checkBox_DirectCon_Done.isSelected()){directConnect = 	"The customer is testing with an ethernet connection.";}
-		if (checkBox_PingRouter_Yes.isSelected()){pingRouter 	= 	"Customer can ping radio.";			}
-		if (checkBox_PingRouter_No.isSelected()){pingRouter 	= 	"Customer can NOT ping the radio.";	}
-		if (checkBox_PingRadio_Yes.isSelected()){pingRadio 		= 	"User can ping the radio.";			}
-		if (checkBox_Ping_Radio_No.isSelected()){pingRadio 		= 	"User can NOT ping the radio.";		}
-		if (checkBox_PingEight_Yes.isSelected()){pingEight		=	"User can ping 8.8.8.8.";			}
-		if (checkBox_PingGoogle_No.isSelected()){pingGoogle		=	"User can Ping Google.ie";			}
-		if (checkBox_PingGoogleIE_Yes.isSelected()){pingGoogle	=	"User can NOT ping google.ie";		}
-		
+		if (checkBox_DirectCon_Done.isSelected()){directConnect 	= 	"The customer is testing with an ethernet connection.";	}
+		if (checkBox_PingRouter_Yes.isSelected()){pingRouter 		= 	"Customer can ping radio.";								}
+		if (checkBox_PingRouter_No.isSelected()){pingRouter 		= 	"Customer can NOT ping the radio.";						}
+		if (checkBox_PingRadio_Yes.isSelected()){pingRadio 			= 	"User can ping the radio.";								}
+		if (checkBox_Ping_Radio_No.isSelected()){pingRadio 			= 	"User can NOT ping the radio.";							}
+		if (checkBox_PingEight_Yes.isSelected()){pingEight			=	"User can ping 8.8.8.8.";								}
+		if (checkBox_PingGoogle_No.isSelected()){pingGoogle			=	"User can Ping Google.ie";								}
+		if (checkBox_PingGoogleIE_Yes.isSelected()){pingGoogle		=	"User can NOT ping google.ie";							}
+		if (chckbxOutage_Yes.isSelected()) 		{outage 			= 	"There was an outage in the area.";						}
+		if (chckbxOutage_No.isSelected())		{outage 			= 	"There are no outages in the area";						}
+		if (chckbxYes_ConnectionMoved.isSelected()) { 	customerMoved		= "Customer has moved the cabled around before talking with us.";}
+		if (chckbxNo_ConnectionMoved.isSelected() ) { 	customerMoved 		= "Customer has NOT moved the cable before talking with us.";}
+		if (checkBox_AccessRouterYes.isSelected()){		accessToRouter	 	= 	"I have access to the router.";}
+		if (checkBox_AccessRouterNo.isSelected()){		accessToRouter	 	= 	"I do not have access to the router.";}
+
 		return "<h2>Issue Description</h2>"
 		+ "Customer has a no connection issue that started: " + textField_DateIssueStarted.getText() + "</br>"
 		+ directConnect + "</br>"
@@ -844,8 +849,8 @@ public class NoConnection_GEM extends JPanel {
 		+ "Power: " + powerLight + "<br>"
 		+ "Lan 1: " + Lan1 + "<br>\n"
 		+ "Lan 2: " + Lan2 + "<br>\n"
-		+ "System:" + Lan2 + "<br>\n"
-		+ "LTE str:" + Lan2 + "<br>\n"
+		+ "System:" + system + "<br>\n"
+		+ "LTE str:" + Signalstr + "<br>\n"
 		+ "Phone: " + phone + "<br>\n"
 		+ "<h3>List clear steps taken to resolve the issue</h3>\n"
 		+ "-" +  WAN
@@ -857,24 +862,29 @@ public class NoConnection_GEM extends JPanel {
 		+ "Identify customer CPE type<br>"
 		+ TB.comboBox_Router.getSelectedItem().toString() + "<br>"
 		+ "Ask customer when the service went down<br>"
-		+ textField_DateIssueStarted.getText();
+		+ textField_DateIssueStarted.getText()
+		+ "3. Check if there is any Outage<bt>" 
+		+ "<b>" + outage + "</b><br>"
+		+ "4. Ask customer if any cables was moved:<br>"
+		+ "<br><b>" + customerMoved + "</b><br>"
+		+ "5. Ask customer what the lights status on the indoor unit:<br>"
+		+ "<h2>Indoor unit Led Status</h2>"
+		+ "Power: " + powerLight + "<br>"
+		+ "Lan 1: " + Lan1 + "<br>\n"
+		+ "Lan 2: " + Lan2 + "<br>\n"
+		+ "System:" + system + "<br>\n"
+		+ "LTE str:" + Signalstr + "<br>\n"
+		+ "Phone: " + phone + "<br>\n"
+		+ "7. Check if CPE is accessible<br>"
+		+ "<b>" + accessToRouter + "</b><br>"
+		+ "8. CPE not accessible remotely – Reseat the radio cable and powercycle indoor unit<br>"
+		;
 
 		
 /*
-		
-
-
-		2. Ask customer when the service went down
-
-		3. Check if there is any Outage
-
-		4. Ask customer if any cables was moved
-
-		5. Ask customer what the lights status on the indoor unit
 
 		6. Check in WG if CPE is returning an IP address
 
-		7. Check if CPE is accessible
 
 		8. CPE not accessible remotely – Reseat the radio cable and powercycle indoor unit
 
