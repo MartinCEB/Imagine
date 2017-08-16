@@ -1,3 +1,6 @@
+
+
+
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -14,7 +17,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
 
-public class NoConnection_GEM extends JPanel {
+public class LTE_NoConnection_CatSix extends JPanel {
 	private JTextField textField_DateIssueStarted;
 	JCheckBox checkBox_PowerOn;
 	JCheckBox checkBox_Off_Power;
@@ -104,8 +107,7 @@ public class NoConnection_GEM extends JPanel {
 	private JLabel lblCanPingFrom;
 	private JCheckBox chckbxRadioToRouterYes;
 	private JCheckBox chckbxRadioToRouterNo;
-	private JTextPane textPane_ExtraInformation;
-	private JLabel lblExtraInformation;
+	private JTextPane txtpnExtraInformationdescription;
 	private JTextField textField_TicketNumber;
 	private JLabel lblHowManyService;
 	private JTextField textField_AmtServiceCall;
@@ -113,7 +115,7 @@ public class NoConnection_GEM extends JPanel {
 	private JCheckBox chckbxYesNotice;
 	private JCheckBox chckbxNoNotice;
 	
-	public NoConnection_GEM(TicketBuilder TB) {
+	public LTE_NoConnection_CatSix(TicketBuilder TB) {
 		
 		this.TB = TB;
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -615,7 +617,7 @@ public class NoConnection_GEM extends JPanel {
 		JLabel label_WanCable_1 = new JLabel("Is WAN cable in the right slot?");
 		GridBagConstraints gbc_label_WanCable_1 = new GridBagConstraints();
 		gbc_label_WanCable_1.fill = GridBagConstraints.BOTH;
-		gbc_label_WanCable_1.gridwidth = 6;
+		gbc_label_WanCable_1.gridwidth = 5;
 		gbc_label_WanCable_1.insets = new Insets(0, 0, 5, 5);
 		gbc_label_WanCable_1.gridx = 2;
 		gbc_label_WanCable_1.gridy = 13;
@@ -625,7 +627,7 @@ public class NoConnection_GEM extends JPanel {
 		GridBagConstraints gbc_checkBox_WAN_YES = new GridBagConstraints();
 		gbc_checkBox_WAN_YES.anchor = GridBagConstraints.WEST;
 		gbc_checkBox_WAN_YES.insets = new Insets(0, 0, 5, 5);
-		gbc_checkBox_WAN_YES.gridx = 8;
+		gbc_checkBox_WAN_YES.gridx = 7;
 		gbc_checkBox_WAN_YES.gridy = 13;
 		NoConnection_Gem.add(checkBox_WAN_YES, gbc_checkBox_WAN_YES);
 		
@@ -921,14 +923,6 @@ public class NoConnection_GEM extends JPanel {
 		 gbc_label.gridy = 21;
 		 NoConnection_Gem.add(label, gbc_label);
 		 
-		 lblExtraInformation = new JLabel("Extra Information");
-		 GridBagConstraints gbc_lblExtraInformation = new GridBagConstraints();
-		 gbc_lblExtraInformation.gridwidth = 3;
-		 gbc_lblExtraInformation.insets = new Insets(0, 0, 5, 5);
-		 gbc_lblExtraInformation.gridx = 1;
-		 gbc_lblExtraInformation.gridy = 22;
-		 NoConnection_Gem.add(lblExtraInformation, gbc_lblExtraInformation);
-		 
 		 lblCanPingFrom = new JLabel("Can ping from radio to router:");
 		 GridBagConstraints gbc_lblCanPingFrom = new GridBagConstraints();
 		 gbc_lblCanPingFrom.insets = new Insets(0, 0, 5, 5);
@@ -950,15 +944,16 @@ public class NoConnection_GEM extends JPanel {
 		 gbc_chckbxRadioToRouterNo.gridy = 22;
 		 NoConnection_Gem.add(chckbxRadioToRouterNo, gbc_chckbxRadioToRouterNo);
 		 
-		 textPane_ExtraInformation = new JTextPane();
-		 GridBagConstraints gbc_textPane_ExtraInformation = new GridBagConstraints();
-		 gbc_textPane_ExtraInformation.gridheight = 5;
-		 gbc_textPane_ExtraInformation.gridwidth = 14;
-		 gbc_textPane_ExtraInformation.insets = new Insets(0, 0, 0, 5);
-		 gbc_textPane_ExtraInformation.fill = GridBagConstraints.BOTH;
-		 gbc_textPane_ExtraInformation.gridx = 1;
-		 gbc_textPane_ExtraInformation.gridy = 23;
-		 NoConnection_Gem.add(textPane_ExtraInformation, gbc_textPane_ExtraInformation);
+		 txtpnExtraInformationdescription = new JTextPane();
+		 txtpnExtraInformationdescription.setText("Extra Information/Description");
+		 GridBagConstraints gbc_txtpnExtraInformationdescription = new GridBagConstraints();
+		 gbc_txtpnExtraInformationdescription.gridheight = 8;
+		 gbc_txtpnExtraInformationdescription.gridwidth = 14;
+		 gbc_txtpnExtraInformationdescription.insets = new Insets(0, 0, 0, 5);
+		 gbc_txtpnExtraInformationdescription.fill = GridBagConstraints.BOTH;
+		 gbc_txtpnExtraInformationdescription.gridx = 1;
+		 gbc_txtpnExtraInformationdescription.gridy = 20;
+		 NoConnection_Gem.add(txtpnExtraInformationdescription, gbc_txtpnExtraInformationdescription);
 		 
 		 lblHowManyService = new JLabel("How many service calls:");
 		 GridBagConstraints gbc_lblHowManyService = new GridBagConstraints();
@@ -1012,6 +1007,8 @@ public class NoConnection_GEM extends JPanel {
 		String system = "", Lan1="",Lan2="",twoG="",fiveG="",phone="",WAN="",directConnect ="",pingRouter="",pingRadio="",pingEight="",pingGoogle="";
 		String isWifiON = "", resetTheWAN = "",mainSocket = "",outageInArea ="", fiddleWithWAN ="", evilMacUser="", wifiChannelChanged = "", ipInWallgarden = "",ipInCSR="",userFD = "";
 
+		if (checkBox_Lan1On.isSelected()){System.out.println("LAN 1 is clicked");	}else {System.out.println("LAN 1 is not clicked");}
+		
 		if (chckbxYes_CSR.isSelected())				{ipInCSR = "Router is online in CSR.";}else if (chckbxNo_CSR.isSelected()){ipInCSR="Router is offline in CSR.";}
 		if (chckbxYes_WallGarden.isSelected())		{ipInWallgarden = "IP address is in wall garden.";}else {ipInWallgarden = "Unit is offline in Wall garden.";}
 		if (chckbxDone_ResetCable.isSelected()) 	{resetTheWAN 	= "The customer has reset the WAN cable.";}
@@ -1069,7 +1066,6 @@ public class NoConnection_GEM extends JPanel {
 				+ "Strength 3: " +  strThree + "\n"
 				+ "Strength 4:" +  strFour + "\n"
 				+ "Strength 5: \t" +  strFive + "\n"
-				+ "System \t" + system + "\n"
 				+ "Lan 1 \t" + Lan1 + "\n"
 				+ "Lan 2 \t" + Lan2 + "\n"
 				+ "2 G \t" + twoG + "\n"
@@ -1091,12 +1087,12 @@ public class NoConnection_GEM extends JPanel {
 				+ ipInWallgarden + "\n"
 				+ userFD + "\n"
 				+ isWifiON + "\n"
-				+ "Extra Information: \n" + textPane_ExtraInformation.getText();
+				+ "Extra Information: \n" + txtpnExtraInformationdescription.getText();
 				
 	}
 	
 	//generate esclation
-	public String generateUNO()
+	public String generateEscalation()
 	{
 		String powerLight = "", canLogin = "",Signalstr = "";
 		String system = "", Lan1="",Lan2="",twoG="",fiveG="",phone="",WAN="",directConnect ="",pingRouter="",pingRadio="",pingEight="",pingGoogle="";
@@ -1155,7 +1151,7 @@ public class NoConnection_GEM extends JPanel {
 		if (checkBox_AccessRouterNo.isSelected()){		accessToRouter	 	= 	"I do not have access to the router.";					}
 		if (chckbxRadioToRouterNo.isSelected()) {pingRouterFromRadio 		= 	"I can't ping the router from the radio.";				}else if (chckbxRadioToRouterYes.isSelected()) {pingRouterFromRadio = "I can ping the router from the radio.";}
 		
-		return 	"TRN: " + textField_TicketNumber.getText() + " IMSI: " + textField_ISMI.getText() + "Height Site: " + textField_Installed_HighSite.getText() +  " ISSUE: " + textField_Issue.getText() + "<br>" + textPane_ExtraInformation.getText() + "<br>"
+		return 	"TRN: " + textField_TicketNumber.getText() + " IMSI: " + textField_ISMI.getText() + "Height Site: " + textField_Installed_HighSite.getText() +  " ISSUE: " + textField_Issue.getText() + "<br>" + txtpnExtraInformationdescription.getText() + "<br>"
 		+ "<h2>Issue Description</h2>"
 		+ "Customer has a no connection issue that started: " + textField_DateIssueStarted.getText() + "</br> " + offlineCSR + "<br></br>" + offlineWallgarden + "</br>" 
 		+ directConnect + "</br>"

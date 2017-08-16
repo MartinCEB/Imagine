@@ -68,9 +68,13 @@ public class InfoGrabber {
 		//System.out.println(serviceList.asText());
 		return serviceList;
 	}
-	
+	public static void main(String args[]) throws FailingHttpStatusCodeException, MalformedURLException, IOException
+	{
+		new  InfoGrabber("martinballireland@gmail.com","7ymer5og");
+	}
 	public InfoGrabber(String username,String password) throws FailingHttpStatusCodeException, MalformedURLException, IOException
 	{
+		/*
 		Usernames = new String [usernamesSize];
 		Passwords = new String[passwordsSize];
 		//init UNPW array
@@ -89,11 +93,11 @@ public class InfoGrabber {
 				//System.out.println("Username: " + Usernames[UN] + " Password: " + Passwords[PW] );
 			}
 		}
+		*/
+		//webClient = setBrowserOptions(webClient);
 		
-		webClient = setBrowserOptions(webClient);
-		
-		HtmlPage wallgarden = LoginToWallGarden("martin.ball","Imagine\"");
-		getServiceList("30338719");
+		//HtmlPage wallgarden = LoginToWallGarden("martin.ball","Imagine\"");
+		//getServiceList("30338719");
 
 		//HtmlPage WGRouterPage = SearchByMAC(mac);
 		
@@ -102,7 +106,7 @@ public class InfoGrabber {
 		//logIntoRouter("Gemtech6");
 		
 		
-		//loginToTornCity();
+		loginToTornCity();
 		//final HtmlPage page = webClient.getPage("https://www.google.ie");
         //final HtmlDivision div = page.getHtmlElementById("some_div_id");
        // final HtmlAnchor anchor = page.getAnchorByName("anchor_name");

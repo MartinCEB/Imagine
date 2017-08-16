@@ -5,8 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 import java.awt.GridBagLayout;
 import java.awt.FlowLayout;
@@ -44,8 +42,8 @@ public class Escalation extends JFrame implements ActionListener   {
 	 * @throws MalformedURLException 
 	 * @throws FailingHttpStatusCodeException 
 	 */
-	public Escalation() throws FailingHttpStatusCodeException, MalformedURLException, IOException {
-		IG = new InfoGrabber("Username","password");
+	public Escalation() throws MalformedURLException, IOException {
+		//IG = new InfoGrabber("Username","password");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 901, 788);
@@ -108,7 +106,7 @@ public class Escalation extends JFrame implements ActionListener   {
 		gbc_editorPane.fill = GridBagConstraints.BOTH;
 		gbc_editorPane.gridx = 1;
 		gbc_editorPane.gridy = 2;
-		editorPane.setText(IG.getInstalledMetrics());
+		//editorPane.setText(IG.getInstalledMetrics());
 		panel.add(editorPane, gbc_editorPane);
 		
 		JPanel panel_1 = new JPanel();
@@ -142,6 +140,7 @@ public class Escalation extends JFrame implements ActionListener   {
 
 	@Override
 	public void actionPerformed(ActionEvent e){
+		/*
 		String BTN_name = ((JButton) e.getSource()).getText();
 		System.out.println(comboBoxTemplates.getSelectedItem());
 		if (BTN_name.equals("Go"))
@@ -160,7 +159,7 @@ public class Escalation extends JFrame implements ActionListener   {
 				System.out.println("Tell em to fuck off");
 			}
 			System.out.println("");
-		}
+		}*/
 		
 	}
 
